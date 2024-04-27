@@ -11,12 +11,12 @@ public class view {
         return "index";
     }
 
-    @GetMapping("/Home")
+    @GetMapping("/home")
     public String Home() {
         return "index";
     }
 
-    @GetMapping("/Main")
+    @GetMapping("/main")
     public String Main() {
         return "index";
     }
