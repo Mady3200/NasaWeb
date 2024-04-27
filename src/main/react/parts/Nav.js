@@ -1,26 +1,32 @@
-// Nav.js
 import React from "react";
 import { NavLink } from "react-router-dom";
 import "./Nav.css";
 
+// useNavigate
+import { useNavigate } from "react-router-dom";
+
 const NavBar = () => {
-  return (
-    <nav className="navbar">
-      <ul className="navbar-nav">
-        <li className="nav-item">
-          <NavLink exact to="/home" className="nav-link" activeClassName="active">
-            Home
-          </NavLink>
-        </li>
-        <li className="nav-item">
-          <NavLink to="/main" className="nav-link" activeClassName="active">
-            Main
-          </NavLink>
-        </li>
-        {/* Add more NavLink components for additional navigation items */}
-      </ul>
-    </nav>
-  );
+    const navigate = useNavigate();
+    return (
+        <nav className="navbar">
+            <div className="nav-buttons">
+                <button
+                    onClick={() => navigate("/home")}
+                    className="nav-button"
+                    activeClassName="active"
+                >
+                    Home
+                </button>
+                <button
+                    onClick={() => navigate("/main")}
+                    className="nav-button"
+                    activeClassName="active"
+                >
+                    Main
+                </button>
+            </div>
+        </nav>
+    );
 };
 
 export default NavBar;
